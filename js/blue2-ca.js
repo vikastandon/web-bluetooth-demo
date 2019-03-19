@@ -17,7 +17,7 @@ function Blue2CA () {
     navigator.bluetooth.requestDevice({
       // filters: [],
       acceptAllDevices: true,
-      optionalServices: [dummyFidoService]})
+      optionalServices: [blue2TempService]})
     .then(device => {
       App().log('Connecting to device ...')
       return device.gatt.connect()
