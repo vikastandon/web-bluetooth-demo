@@ -12,11 +12,12 @@ function Blue2CA () {
   function run () {
     App().log('Requesting bluetooth device...')
     var blue2TempService = 'f2b32c77-ea68-464b-9cd7-a22cbffb98bd'
+    var dummyFidoService = `F1D0FFFD-0000-1000-8000-00805F9B34FB`
     var blue2TempASCIICharacteristic = '78544003-4394-4fc2-8cfd-be6a00aa701b'
     navigator.bluetooth.requestDevice({
       // filters: [],
       acceptAllDevices: true,
-      optionalServices: [blue2TempService]})
+      optionalServices: [dummyFidoService]})
     .then(device => {
       App().log('Connecting to device ...')
       return device.gatt.connect()
